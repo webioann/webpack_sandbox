@@ -22,16 +22,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: [process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader'],
-                // use: ['style-loader', 'css-loader'],
-                // options: {
-                //     modules: true,
-                // },
+                test: /\.s[ac]ss$/i,
+                // use: [process.env.NODE_ENV === 'production' 
+                //     ? MiniCssExtractPlugin.loader 
+                //     : 'style-loader', 'css-loader', "sass-loader"],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: ['ts-loader', 'babel-loader'],
                 exclude: /node_modules/,
             },
              // images rules 
@@ -56,4 +55,5 @@ module.exports = {
             filename: 'index.html', // название выходного файла
         }),
     ],
+
 };
