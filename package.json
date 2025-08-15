@@ -1,0 +1,16 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Webpack HTML and CSS sandbox",
+  "license": "ISC",
+  "author": "Webioann",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "webpack": "^5.101.2",
+    "webpack-cli": "^6.0.1"
+  }
+}
