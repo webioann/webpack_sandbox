@@ -1,3 +1,5 @@
-.start {
+#root {
     color: brown;
+    background: #000;
+    padding: 20px;
 }
