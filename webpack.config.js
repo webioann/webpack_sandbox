@@ -1,9 +1,19 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        main: path.resolve(__dirname, './src/main.js'),
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[contenthash:8].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
     },
 };

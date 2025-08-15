@@ -7,9 +7,14 @@
   "type": "commonjs",
   "main": "main.js",
   "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --mode development --open",
+    "watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
     "webpack": "^5.101.2",
     "webpack-cli": "^6.0.1"
   }

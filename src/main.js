@@ -1,10 +1,14 @@
-function component() {
-    const element = document.createElement('div');
+// import './styles.css';
 
-  // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+console.log('Webpack is working!');
+// function component() {
+//     const element = document.createElement('div');
 
-    return element;
-}
+//   // Lodash, currently included via a script, is required for this line to work
+//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//     element.classList.add('start');
 
-document.body.appendChild(component());
+//     return element;
+// }
+
+// document.body.appendChild(component());
