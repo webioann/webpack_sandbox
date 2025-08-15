@@ -19,17 +19,30 @@ module.exports = {
         historyApiFallback: true,
         hot: true, // Enable Hot Module Replacement
     },
+        plugins: [
+        new HtmlWebpackPlugin({
+            title: 'webpack Boilerplate',
+            template: path.resolve(__dirname, './src/template.html'), // шаблон
+            filename: 'index.html', // output file
+            inject: 'body', // script tags will be injected into the body
+        }),    
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash:8].css', // output CSS file name
+            chunkFilename: '[id].[contenthash:8].css',
+            ignoreOrder: true // chunk CSS file name
+        }),
+    ],
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/i,
-                // use: [process.env.NODE_ENV === 'production' 
-                //     ? MiniCssExtractPlugin.loader 
-                //     : 'style-loader', 'css-loader', "sass-loader"],
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                test: /\.(c|sa|sc)ss$/i,
+                use: [process.env.NODE_ENV === 'production' 
+                    ? (MiniCssExtractPlugin.loader, "css-loader", "sass-loader")
+                    : 'style-loader'],
+                // use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.tsx?$/,
+                test: /\.ts?$/,
                 use: ['ts-loader', 'babel-loader'],
                 exclude: /node_modules/,
             },
@@ -48,12 +61,5 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'webpack Boilerplate',
-            template: path.resolve(__dirname, './src/template.html'), // шаблон
-            filename: 'index.html', // название выходного файла
-        }),
-    ],
 
 };

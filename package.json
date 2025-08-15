@@ -4,7 +4,6 @@
   "description": "Webpack HTML and CSS sandbox",
   "license": "ISC",
   "author": "Webioann",
-  "type": "commonjs",
   "main": "main.js",
   "scripts": {
     "build": "webpack serve --mode production",
